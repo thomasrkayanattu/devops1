@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Setup Python Environment') {
             steps {
-                sh '''
+                bat '''
                 python3 --version
                 python3 -m venv venv
                 . venv/bin/activate
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh '''
+                bat '''
                 . venv/bin/activate
                 pytest
                 '''
